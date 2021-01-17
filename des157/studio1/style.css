@@ -4,8 +4,9 @@
 
 body {
     font-family: Roboto, sans-serif;
-    color: #333;
+    color: rgb(235, 235, 235);
     background-color: #333;
+    background-image: url("images/swirl-bg-dk.png");
 }
 
 div#container {
@@ -13,62 +14,58 @@ div#container {
     min-width: 800px;
     margin: 2em auto;
     padding-top: 2em;
-    background-color: white;
+    background-color: #333;
 }
 
 header {
     width: 800px;
-    margin: auto;
+    margin: 0 auto 2em auto;
 }
 
 #banner {
-    position: relative;
     display: flex;
-    width: 800px;
     height: 250px;
     margin: auto;
-    background-color: #333;
+    background-color: white;
 }
 
 #banner div {
-    transition: all 2s;
     opacity: .75;
+    transition: all 2s;
 }
 
 #banner div:hover {
-    width: 800px;
+    width: 80%;
     opacity: 1;
 }
 
 h1 {
-    margin: .7em 0 0 -1.25em;
-    font-size: 4.5em;
+    margin: .5em 0 0 -2.5em;
+    font-size: 2.5em;
     font-family: Helvetica, sans-serif;
     letter-spacing: -.2em;
 }
 
 h2 {
-    margin: -.75em 0 0 0;
+    margin: -.55em 0 1em 0;
     font-size: 1em;
     font-weight: normal;
     font-style: italic;
 }
 
 #container>section {
-    width: 800px;
-    margin: 5em auto 1em auto;
     display: flex;
     justify-content: space-evenly;
-    /* display:grid;
-  grid-template-columns: 1fr 1fr 1fr; */
+    width: 800px;
+    margin: 1em auto;
 }
 
 section section {
     width: 33%;
-    /* border: 1px lightgray dotted; */
+    border: 1px lightgray dashed;
     padding: 1em;
     /* background-color: #eee; */
-    background-image: url("images/swirl-bg-lt.png");
+    /* background-image: url("images/swirl-bg-lt.png"); */
 }
 
 section section:nth-child(2) {
@@ -122,28 +119,34 @@ section a:hover {
 }
 
 footer {
-    text-align: center;
-    background: linear-gradient(to bottom right, yellow, greenyellow);
-    /* Standard syntax */
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    padding: 1em;
+    border-top: 5px greenyellow dotted;
+    /* background: linear-gradient(to bottom right, yellow, greenyellow); */
 }
 
 footer nav {
-    width: 1200px;
-    min-width: 800px;
-    margin: 0 auto;
-    padding: 2em 0;
-    text-align: center;
+    /* padding: 1em 0; */
 }
 
 footer li {
-    display: inline;
+    display: inline-block;
     font-weight: bold;
     font-size: .9em;
+    /* text-align: center; */
 }
 
+
+/* .border {
+    border-left: 2px #333 solid;
+    border-right: 2px #333 solid;
+} */
+
 footer a {
-    padding: 3em;
-    color: #333;
+    padding: 1.5em;
+    color: yellow
 }
 
 footer a:hover {
@@ -151,9 +154,12 @@ footer a:hover {
     color: white;
 }
 
+
+/* tried using flex:n instead of width:npx but the movement was jittery w flex */
+
 #st1 {
     width: 55px;
-    background-color: purple;
+    background-color: rgb(182, 12, 182);
 }
 
 #st1:hover,
@@ -178,10 +184,18 @@ footer a:hover {
 #st3 {
     width: 35px;
     background-color: rgb(238, 255, 82);
+    animation-duration: 5s;
 }
 
 #st3:hover {
     cursor: nw-resize;
+}
+
+#st3,
+#question {
+    animation-name: fade;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 #st4 {
@@ -198,20 +212,12 @@ footer a:hover {
     background-color: rgb(231, 31, 75);
 }
 
-#st21,
-#question {
-    animation-name: fade;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
 #st5:hover {
     cursor: sw-resize;
 }
 
 #st6 {
-    width: 55px;
-    background-color: rgb(0, 214, 252);
+    width: 55px background-color: rgb(0, 214, 252);
 }
 
 #st6:hover {
@@ -253,7 +259,6 @@ footer a:hover {
 #st11 {
     width: 77px;
     background-color: rgb(224, 31, 231);
-    /* animation-duration: 800ms; */
 }
 
 #st12 {
@@ -268,7 +273,6 @@ footer a:hover {
 #st13 {
     width: 25px;
     background-color: rgb(150, 6, 150);
-    /* animation-duration: 1.5s; */
 }
 
 #st14 {
@@ -329,7 +333,6 @@ footer a:hover {
 #st21 {
     width: 55px;
     background-color: rgb(14, 168, 153);
-    animation-duration: 10s;
 }
 
 #st21:hover {
@@ -369,10 +372,10 @@ footer a:hover {
         opacity: .75;
     }
     75% {
-        opacity: 1;
+        opacity: 0;
     }
     100% {
-        opacity: .1;
+        opacity: 1;
     }
 }
 
