@@ -7,26 +7,38 @@ body {
     color: rgb(235, 235, 235);
     background-color: #333;
     background-image: url("images/swirl-bg-dk.png");
+    transition: all 2s;
+}
+
+body.switch {
+    background-image: url('images/sunflower-1366.png');
+    color: #333;
 }
 
 div#container {
-    width: 1200px;
+    position: relative;
+    width: 100%;
+    max-width: 1366px;
+    /* make sure the column not too small and text stays readable */
     min-width: 800px;
-    margin: 2em auto;
+    margin: 1em auto;
     padding-top: 2em;
-    background-color: #333;
+    /* turn on to show the flexibility of the page before adding media queries */
+    /* border: 1px solid lightgray; */
 }
 
 header {
-    width: 800px;
     margin: 0 auto 2em auto;
 }
 
 #banner {
+    position: relative;
     display: flex;
+    width: 1100px;
     height: 250px;
     margin: auto;
     background-color: white;
+    overflow: hidden;
 }
 
 #banner div {
@@ -34,43 +46,48 @@ header {
     transition: all 2s;
 }
 
-#banner div:hover {
-    width: 80%;
-    opacity: 1;
+banner.switch {
+    background-color: antiquewhite;
+    transition: all 2s;
 }
 
+
+/* #banner:hover div {
+    width: 80%;
+    opacity: 1;
+} */
+
 h1 {
-    margin: .5em 0 0 -2.5em;
+    margin: .5em;
     font-size: 2.5em;
     font-family: Helvetica, sans-serif;
     letter-spacing: -.2em;
 }
 
 h2 {
-    margin: -.55em 0 1em 0;
+    margin: -1em 0 1em 3em;
     font-size: 1em;
     font-weight: normal;
     font-style: italic;
 }
 
-#container>section {
+main {
     display: flex;
     justify-content: space-evenly;
-    width: 800px;
     margin: 1em auto;
 }
 
-section section {
-    width: 33%;
+main section {
+    width: 25%;
     border: 1px lightgray dashed;
+    margin: 0 .25em;
     padding: 1em;
-    /* background-color: #eee; */
-    /* background-image: url("images/swirl-bg-lt.png"); */
 }
 
-section section:nth-child(2) {
+
+/* section section:nth-child(2) {
     margin: 0 1em;
-}
+} */
 
 h3 {
     padding-left: .5em;
@@ -98,12 +115,29 @@ section li {
 section nav li a {
     line-height: 1.1em;
     display: inline-block;
+    /* turn this off and then turn on padding for hover to see why padding needs to be set in a not a:hover */
     padding: .5em;
     color: #f06;
 }
 
+section.switch nav li a {
+    background-color: black;
+    color: antiquewhite;
+}
+
+#projects.switch a:hover,
+#research.switch a:hover,
+#development.switch a:hover,
+#final.switch a:hover {
+    background-color: orange;
+    color: black;
+}
+
 section a:hover {
     color: #333;
+    /* this demonstrates how the spacing gets wonky if changing text size on hover */
+    /* font-size: 22px; */
+    /* padding: .5em; */
 }
 
 #projects a:hover {
@@ -114,8 +148,26 @@ section a:hover {
     background-color: greenyellow;
 }
 
-#dev a:hover {
+#development a:hover {
     background-color: turquoise;
+}
+
+#final a:hover {
+    background-color: rgb(172, 156, 252);
+}
+
+button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 12px;
+    background-color: gold;
+    border: 0;
+    box-shadow: 5px -5px rgb(240, 166, 6);
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 footer {
@@ -125,10 +177,7 @@ footer {
     padding: 1em;
     border-top: 5px greenyellow dotted;
     /* background: linear-gradient(to bottom right, yellow, greenyellow); */
-}
-
-footer nav {
-    /* padding: 1em 0; */
+    transition: all 2s;
 }
 
 footer li {
@@ -138,12 +187,6 @@ footer li {
     /* text-align: center; */
 }
 
-
-/* .border {
-    border-left: 2px #333 solid;
-    border-right: 2px #333 solid;
-} */
-
 footer a {
     padding: 1.5em;
     color: yellow
@@ -152,6 +195,20 @@ footer a {
 footer a:hover {
     background-color: #f06;
     color: white;
+}
+
+footer.switch {
+    border-top: 0px;
+}
+
+footer.switch a {
+    background-color: black;
+    color: antiquewhite;
+}
+
+footer.switch a:hover {
+    background-color: orange;
+    color: black;
 }
 
 
@@ -198,26 +255,31 @@ footer a:hover {
     animation-direction: alternate;
 }
 
-#st4 {
+#st4,
+#st22 {
     width: 35px;
     background-color: rgb(252, 113, 0);
 }
 
-#st4:hover {
+#st4:hover,
+#st22:hover {
     cursor: se-resize;
 }
 
-#st5 {
+#st5,
+st#23 {
     width: 77px;
     background-color: rgb(231, 31, 75);
 }
 
-#st5:hover {
+#st5:hover,
+#st23:hover {
     cursor: sw-resize;
 }
 
 #st6 {
-    width: 55px background-color: rgb(0, 214, 252);
+    width: 55px;
+    background-color: rgb(0, 214, 252);
 }
 
 #st6:hover {
@@ -238,12 +300,14 @@ footer a:hover {
     cursor: nw-resize;
 }
 
-#st9 {
+#st9,
+#st24 {
     width: 35px;
     background-color: rgb(21, 184, 248);
 }
 
-#st9:hover {
+#st9:hover,
+#st24:hover {
     cursor: se-resize;
 }
 
@@ -256,12 +320,14 @@ footer a:hover {
     cursor: sw-resize;
 }
 
-#st11 {
+#st11,
+#st25 {
     width: 77px;
     background-color: rgb(224, 31, 231);
 }
 
-#st12 {
+#st12,
+#st25:hover {
     width: 35px;
     background-color: turquoise
 }
@@ -302,12 +368,14 @@ footer a:hover {
     cursor: sw-resize;
 }
 
-#st17 {
+#st17,
+#st27 {
     width: 77px;
     background-color: rgb(31, 84, 231);
 }
 
-#st17:hover {
+#st17:hover,
+#st27:hover {
     cursor: ne-resize;
 }
 
@@ -330,17 +398,49 @@ footer a:hover {
     background-color: rgb(158, 106, 243);
 }
 
-#st21 {
-    width: 55px;
+#st21,
+#st26 {
+    width: 75px;
     background-color: rgb(14, 168, 153);
 }
 
-#st21:hover {
+#st21:hover,
+#st26:hover {
     cursor: sw-resize;
 }
 
 #question {
     animation-duration: 1s;
+}
+
+#diag1 {
+    position: absolute;
+    left: 10%;
+    top: -37%;
+    width: 50px;
+    height: 450px;
+    background-color: black;
+    transform: rotate(45deg);
+}
+
+#diag2 {
+    position: absolute;
+    left: 25%;
+    top: -37%;
+    width: 75px;
+    height: 450px;
+    background-color: black;
+    transform: rotate(45deg);
+}
+
+#diag3 {
+    position: absolute;
+    left: 45%;
+    top: -44%;
+    width: 100px;
+    height: 500px;
+    background-color: black;
+    transform: rotate(45deg);
 }
 
 .moveDown {
@@ -355,10 +455,6 @@ footer a:hover {
 
 .space {
     margin-left: .25em;
-}
-
-.btm-margin {
-    margin-bottom: 2.5em;
 }
 
 @keyframes fade {
