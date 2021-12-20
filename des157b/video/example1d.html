@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video API - Example 1c</title>
+    <title>Video API - Example 1d - Loading</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
         * {
@@ -77,20 +77,6 @@
             animation: bird 2s infinite alternate ease-in-out;
         }
         
-        @keyframes bird {
-            0% {
-                opacity: .5;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: .5;
-                transform: scale(1.5);
-            }
-        }
-        
         .fa-expand {
             position: absolute;
             top: 10px;
@@ -109,6 +95,20 @@
         
         .showing {
             opacity: 1
+        }
+        
+        @keyframes bird {
+            0% {
+                opacity: .5;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: .5;
+                transform: scale(1.5);
+            }
         }
     </style>
 
