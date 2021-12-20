@@ -49,6 +49,12 @@
 
     fs.addEventListener('click', function() {
         console.log('requestfullscreen')
-        vid.requestFullscreen();
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            }
+        }
     })
 })()
