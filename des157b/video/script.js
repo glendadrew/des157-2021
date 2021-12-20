@@ -2,6 +2,7 @@
     'use strict';
     console.log('reading');
     const vid = document.querySelector('#myVideo');
+    const fs = document.querySelector('.fa-expand');
     const line1 = document.querySelector('#line1');
     const line2 = document.querySelector('#line2');
     const line3 = document.querySelector('#line3');
@@ -44,6 +45,10 @@
         } else {
             line6.className = "hidden";
         }
-
     }
+
+    fs.addEventListener('click', function() {
+        console.log('requestfullscreen')
+        vid.requestFullscreen();
+    })
 })()
