@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video API - Example 1c</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- trying this -->
+    <link rel="preload" href="media/cranes-h264-720.mp4" as="video">
     <style>
         * {
             margin: 0;
@@ -91,7 +93,7 @@
 </head>
 
 <body>
-    <video id="myVideo" preload="auto" muted autoplay loop playsinline>
+    <video id="myVideo" preload="auto" poster="images/poster.jpg" muted autoplay loop playsinline>
 
         <source src="media/cranes-h264-720.mp4" type="video/mp4">
         <source src="media/cranes-720.webm" type="video/webm">
