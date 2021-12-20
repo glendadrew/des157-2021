@@ -93,10 +93,10 @@
 <body>
     <video id="myVideo" poster="images/poster.jpg" muted autoplay loop playsinline>
 
-        <source src="media/cranes-h264-720.mp4" type="video/mp4">
-        <source src="media/cranes-720.webm" type="video/webm">
+        <source src="media/cranes-short.mp4" type="video/mp4">
+        <source src="media/cranes-short.webm" type="video/webm">
 
-        <p>Your browser doesn't support HTML5 video. Here is a <a href="media/cranes-h264-720.mp4">link to the video</a>
+        <p>Your browser doesn't support HTML5 video. Here is a <a href="media/cranes-short.mp4">link to the video</a>
             instead.</p>
     </video>
     <i class="fas fa-expand"></i>
@@ -107,6 +107,7 @@
         <p id="line4" class="hidden">is their method,</p>
         <p id="line5" class="hidden">their current, the translated story</p>
         <p id="line6" class="hidden">of life they write across the sky.</p>
+        <p id="line7" class="hidden"> The Sandhills by Linda Hogan</p>
     </section>
 
     <script>
@@ -121,41 +122,46 @@
             const line4 = document.querySelector('#line4');
             const line5 = document.querySelector('#line5');
             const line6 = document.querySelector('#line6');
+            let poem = true; // only play poem one time
 
             const intervalID = setInterval(checkTime, 1000);
 
             function checkTime() {
-                console.log(myVideo.currentTime)
-                if (0 < myVideo.currentTime && myVideo.currentTime < 4) {
-                    line1.className = "showing";
-                } else {
-                    line1.className = "hidden";
-                }
-                if (7 < myVideo.currentTime && myVideo.currentTime < 9) {
-                    line2.className = "showing";
-                } else {
-                    line2.className = "hidden";
-                }
+                console.log(parseInt(myVideo.currentTime));
+                if (poem) {
+                    if (0 < myVideo.currentTime && myVideo.currentTime < 4) {
+                        line1.className = "showing";
+                    } else {
+                        line1.className = "hidden";
+                    }
+                    if (7 < myVideo.currentTime && myVideo.currentTime < 9) {
+                        line2.className = "showing";
+                    } else {
+                        line2.className = "hidden";
+                    }
 
-                if (11 < myVideo.currentTime && myVideo.currentTime < 13) {
-                    line3.className = "showing";
-                } else {
-                    line3.className = "hidden";
-                }
-                if (13.5 < myVideo.currentTime && myVideo.currentTime < 16) {
-                    line4.className = "showing";
-                } else {
-                    line4.className = "hidden";
-                }
-                if (17 < myVideo.currentTime && myVideo.currentTime < 19) {
-                    line5.className = "showing";
-                } else {
-                    line5.className = "hidden";
-                }
-                if (21 < myVideo.currentTime && myVideo.currentTime < 24) {
-                    line6.className = "showing";
-                } else {
-                    line6.className = "hidden";
+                    if (11 < myVideo.currentTime && myVideo.currentTime < 13) {
+                        line3.className = "showing";
+                    } else {
+                        line3.className = "hidden";
+                    }
+                    if (13.5 < myVideo.currentTime && myVideo.currentTime < 16) {
+                        line4.className = "showing";
+                    } else {
+                        line4.className = "hidden";
+                    }
+                    if (17 < myVideo.currentTime && myVideo.currentTime < 19) {
+                        line5.className = "showing";
+                    } else {
+                        line5.className = "hidden";
+                    }
+                    if (21 < myVideo.currentTime && myVideo.currentTime < 24) {
+                        line6.className = "showing";
+                    } else {
+                        line6.className = "hidden";
+                    }
+
+                    if (myVideo.currentTime > 25) poem = false;
                 }
             }
 
