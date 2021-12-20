@@ -5,14 +5,93 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video API - Example 1d</title>
+    <title>Video API - Example 1c</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <link href="styles.css" rel="stylesheet">
-    <script src="script.js" defer></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: black;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: antiquewhite;
+        }
+        
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+        
+        #poem p {
+            position: absolute;
+            padding: 1em;
+            font-size: 2em;
+            background-color: black;
+            transition: all 2.5s;
+        }
+        
+        #line1 {
+            bottom: 0%;
+            left: 0%;
+        }
+        
+        #line2 {
+            bottom: 15%;
+            left: 15%;
+        }
+        
+        #line3 {
+            bottom: 30%;
+            left: 30%;
+        }
+        
+        #line4 {
+            bottom: 60%;
+            left: 60%;
+        }
+        
+        #line5 {
+            top: 10%;
+            right: 20%;
+        }
+        
+        #line6 {
+            top: 0%;
+            right: 0%;
+        }
+        
+        .fa-expand {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 36px;
+            color: orange;
+        }
+        
+        .fa-expand:hover {
+            cursor: pointer;
+        }
+        
+        .hidden {
+            opacity: 0;
+        }
+        
+        .showing {
+            opacity: 1
+        }
+    </style>
+
 </head>
 
 <body>
-    <video id="myVideo" muted autoplay loop playsinline>
+    <video id="myVideo" poster="images/poster.jpg" class="lazy" muted autoplay loop playsinline>
 
         <source src="media/cranes-h264-720.mp4" type="video/mp4">
         <source src="media/cranes-720.webm" type="video/webm">
